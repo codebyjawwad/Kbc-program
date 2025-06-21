@@ -1,0 +1,27 @@
+questions=[
+["who is the national poet of pakistan?","allama iqbal","ghalib","quaid e azam","liaqat ali",1]
+,["who is your favourit book?","english","science","math","quran",4]
+,["what is your name ?", "abbas","jawwad","ali","sajjad",2]
+,["what is your favourite color?","green","blue","yello","white",2]
+]
+levels=[1000,2000,7000,16000,50000,120000,320000]
+money=0
+for i in range(0,len(questions)):
+    question=questions[i]
+    print(f"\n\nyour first question for Rs{levels[i]}")
+    print(f"a. {question[1]}    b. {question[2]}")
+    print(f"c. {question[3]}    d. {question[4]}")
+    reply=int(input("Enter your answer from1 (1-4) or 0 for quit:\n"))
+    if(reply==0):
+        money= levels[i-1]
+        break
+    if (reply==question[-1]):
+        print(f"you are correct and you won {levels[i]}")
+        print(f'money you take to home {levels[i]}')
+    elif(i==4):
+        money=50000
+    else:
+        print("wrong answer")
+        #print("you can play again this game again")
+        print(f"money you take to home {money}")
+        break
